@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+    <div class="container">
+        <h1 class="text-center">Create Category Project</h1>
+        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded mx-auto" style="max-width: 400px;">
+            <div class="card-body text-center">
+                
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Create Category" class="btn btn-danger mt-3 d-block mx-auto">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

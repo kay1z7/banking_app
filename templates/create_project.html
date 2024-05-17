@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="container">
+        <h1 class="text-center mb-4">Create Project</h1>
+        <div class="card w-50 mx-auto shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="card-body">
+                <div class="mb-3 row">
+                    <label for="id_name" class="col-3 col-form-label">Name:</label>
+                    <div class="col">
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="id_description" class="col-3 col-form-label">Description:</label>
+                    <div class="col">
+                        {{ form.description }}
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="id_total_budget" class="col-3 col-form-label">Total Budget:</label>
+                    <div class="col">
+                        {{ form.total_budget }}
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="id_deadline" class="col-3 col-form-label">Deadline:</label>
+                    <div class="col">
+                        {{ form.deadline }}
+                    </div>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Create Project" class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

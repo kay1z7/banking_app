@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded text-center mx-auto" style="max-width: 400px;">
+        <div>
+            Список проектов
+        </div>
+        <div class="card-body" style="margin-bottom: 10px;">
+            {% if user.is_authenticated %}
+            {% for project in projects %}
+                <a style="text-decoration:none; color: inherit;" href="{% url 'project_detail' project.id %}">
+                    <span class="field-value">{{ project.name }}</span><br>
+                </a>
+                <a style="text-decoration:none; color: inherit;" href="{% url 'project_detail' project.id %}">
+                  <span class="field-value">{{ project.deadline}}</span><br>
+              </a>
+            {% endfor %}
+            {% else %}
+                <p>Пожалуйста, <a href="{% url 'login' %}">войдите</a>, чтобы увидеть список проектов.</p>
+            {% endif %}
+        </div>
+        {% if user.is_authenticated %}
+        <div class="text-body-secondary">
+                <a href="{% url 'create_project' %}" class="btn btn-danger">Добавить проект</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
