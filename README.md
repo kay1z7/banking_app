@@ -12,4 +12,3 @@
 4. Редактирование проекта
 <img width="616" alt="image" src="https://github.com/kay1z7/banking_app/assets/103060251/75d229cb-4eb0-40b7-b178-08bb3ac402d8">
 
-5. 
