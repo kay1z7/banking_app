@@ -1,0 +1,22 @@
+<!-- branches_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Branches</title>
+</head>
+<body>
+    <h1>List of Branches</h1>
+    <ul>
+        {% for branch in branches %}
+        <li>
+            <strong>Name:</strong> {{ branch.name }}<br>
+            <strong>Address:</strong> {{ branch.address }}<br>
+            <strong>Branch Code:</strong> {{ branch.branch_code }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
